@@ -7,7 +7,7 @@ from nltk.stem.porter import PorterStemmer
 from tensorflow.keras.preprocessing.text import one_hot
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-model = keras.models.load_model('Models\model.h5')
+model = keras.models.load_model('model.h5')
 
 
 def wordToVec(tweet):
