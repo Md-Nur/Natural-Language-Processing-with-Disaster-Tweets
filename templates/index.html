@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="TwiForecast s a powerful weather prediction tool that harnesses the power of real-time tweets to provide accurate weather forecasts. Stay ahead of the storm and plan your day with confidence using our innovative technology. Discover the latest weather updates, trends, and insights from Twitter users around the world. Get instant access to reliable weather information with TweetWeather and make informed decisions based on social media buzz.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>TwiForecast - Predict Weather with Real-Time Tweets | Weather Prediction Tool</title>
+
+</head>
+
+<boyd class="bg-gray-200">
+    <header>
+        <nav class="bg-gray-800 shadow-2xl ">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="#" class="text-lg font-semibold text-white">TwiForecast</a>
+                    </div>
+                    <!-- Mobile Menu Toggle Button -->
+                    <div class="flex items-center sm:hidden">
+                        <button type="button"
+                            class="text-gray-300 hover:text-gray-200 focus:outline-none focus:text-gray-200"
+                            aria-label="Toggle menu" id="mobile-menu-button">
+                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6">
+                                <path fill-rule="evenodd"
+                                    d="M2 5a1 1 0 011-1h14a1 1 0 010 2H3a1 1 0 01-1-1zm0 6a1 1 0 011-1h14a1 1 0 010 2H3a1 1 0 01-1-1zm0 6a1 1 0 011-1h14a1 1 0 010 2H3a1 1 0 01-1-1z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- Desktop Menu -->
+                    <div class="hidden sm:flex sm:ml-6 sm:items-center">
+                        <div class="flex space-x-4">
+                            <a href="" class="px-3 py-2 text-lg font-medium text-gray-300 hover:text-gray-100">Home</a>
+                            <a href="#"
+                                class="px-3 py-2 text-lg font-medium text-gray-300 hover:text-gray-100">About</a>
+                            <a href="#"
+                                class="px-3 py-2 text-lg font-medium text-gray-300 hover:text-gray-100">Services</a>
+                            <a href="#"
+                                class="px-3 py-2 text-lg font-medium text-gray-300 hover:text-gray-100">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-gray-100">Home</a>
+                    <a href="#"
+                        class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-gray-100">About</a>
+                    <a href="#"
+                        class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-gray-100">Services</a>
+                    <a href="#"
+                        class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-gray-100">Contact</a>
+                </div>
+            </div>
+        </nav>
+        <section class="relative bg-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="relative py-24 px-4 sm:px-6 lg:px-8 text-center">
+                    <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">TwiForecast
+                    </h1>
+                    <p class="mt-6 max-w-3xl text-xl text-gray-300 inline">This website is a simple NLP tool for
+                        disaster
+                        tweets. In this website you have to put a tweet and the system will predict the tweet is about
+                        disaster or not. Please give a tweet that has 28 words or less. This predictions must be 100%
+                        wrong or else it will be considered as disaster tweet. The accuracy of the machine learning
+                        model is around 70%.</p>
+                    <div class="mt-10">
+                        <a href="#input"
+                            class="inline-block text-xl font-medium text-white bg-indigo-600 hover:bg-indigo-700 py-3 px-8 rounded-lg">Get
+                            Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <!-- Add your content here -->
+    <section class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 my-10">
+        <div class="mt-5 md:mt-0 md:col-span-2">
+            <h2 class="">NLP with Disaster Tweets</h2>
+            <form id="input" action="#" method="GET">
+                <div class="shadow-lg overflow-hidden sm:rounded-md">
+                    <div class="px-4 py-5 bg-white sm:p-6">
+                        <div class="grid grid-cols-6 gap-6">
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="name" class="block text-lg font-medium text-gray-700">Name</label>
+                                <input type="text" name="name" id="name"
+                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
+                                    placeholder="Name">
+                            </div>
+
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="location" class="block text-lg font-medium text-gray-700">Location</label>
+                                <input type="text" name="location" id="location"
+                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
+                                    placeholder="Location">
+                            </div>
+
+                            <div class="col-span-6">
+                                <label for="email" class="block text-lg font-medium text-gray-700">Tweets</label>
+                                <input type="text" name="tweet" id="tweet"
+                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
+                                    placeholder="Max length">
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="px-4 py-3 bg-gray-50 text-center sm:px-6">
+                        <button type="submit"
+                            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Submit
+                        </button>
+                    </div>
+                    <div class="px-4 py-3 bg-gray-50 sm:px-6 ">
+                        <label for="message" class="block text-lg font-medium text-gray-700">Result</label>
+                        <p id="message"
+                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md p-5 {{bgColor}}">
+                            {{result}}</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800">
+        <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+
+            <div class="mt-8 flex justify-center space-x-6">
+                <a href="https://www.facebook.com/CodeNCognition/" target="_blank" class="text-gray-400 hover:text-gray-300">
+                    <i class="fa-brands fa-facebook fa-xl"></i>
+                </a>
+                <a href="https://www.instagram.com/codencognition/" target="_blank" class="text-gray-400 hover:text-gray-300">
+                    <i class="fa-brands fa-instagram fa-xl"></i>
+                </a>
+                <a href="https://github.com/Md-Nur" target="_blank"  class="text-gray-400 hover:text-gray-300">
+                    <i class="fa-brands fa-github fa-xl"></i>
+                </a>
+            </div>
+            <p class="mt-8 text-center text-base leading-6 text-gray-400">
+                &copy; 2023 Your Company. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+
+
+
+    <script src="static/index.js"></script>
+    </body>
+
+</html>

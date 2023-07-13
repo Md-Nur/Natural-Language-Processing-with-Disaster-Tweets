@@ -20,7 +20,7 @@ def wordToVec(tweet):
     review = review.lower()
     review = review.split()
     review = [ps.stem(word)
-                      for word in review if not word in stopwords.words('english')]
+    for word in review if not word in stopwords.words('english')]
     review = ' '.join(review)
     corpus.append(review)
     oneHotTrain = [one_hot(i, vocSize) for i in corpus]
